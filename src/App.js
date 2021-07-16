@@ -13,11 +13,14 @@ function App() {
     listOfTasks[index].completed = !listOfTasks[index].completed;
     setTasks([...listOfTasks]);
   }
+  const deleteTask = index => {
+    setTasks([...listOfTasks.slice(0, index), ...listOfTasks.slice(index+1)])
+  }
   return (
     <div className="App">
       <h1>ToDo List</h1>
-      <Task/>
-      <List myTask={listOfTasks} updateTaskStat={updateTaskStat}/>
+      <Task newTask={addTask}/>
+      <List myTask={listOfTasks} updateTaskStat={updateTaskStat} deleteTask={deleteTask}/>
     </div>
   );
 }

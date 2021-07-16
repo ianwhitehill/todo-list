@@ -6,10 +6,12 @@ const Task = props => {
         completed: false
     });
     const onChangeHandler = e => {
-        setMyTask({...myTask, [e.target.name]: e.taget.value})
+        setMyTask({...myTask,
+             [e.target.name]: e.target.value})
     }
     const onCheckHandler = e => {
-        setMyTask({...myTask, [e.target.name]: e.taget.value})
+        setMyTask({...myTask,
+             [e.target.name]: e.target.value})
     }
     const onSubmitHandler = e => {
         e.preventDefault();
@@ -20,7 +22,7 @@ const Task = props => {
             <form onSubmit={onSubmitHandler}>
                 <label htmlFor="task">Task: </label>
                 <input type="text" name='task' onChange={onChangeHandler}/>
-                <input type="checkbox" name='completed' checked={myTask.completed} onChange={onCheckHandler}/>
+                {/* <input type="checkbox" name='completed' checked={myTask.completed} onChange={onCheckHandler}/> */}
                 <input type="submit" value='+'/>
             </form>
         </div>
